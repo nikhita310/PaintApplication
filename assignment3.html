@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <title>Canvas Application </title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body onload="init()">
+      <div class="canvasDiv">
+         <canvas id="mycanvas" width="800px" height="500px">
+            Canvas element not supported.
+         </canvas>
+      </div>
+      <div class="grid-container">
+         <div id="stroke">
+
+            <h4>Color</h4>
+            <label><input type="radio" name="strokecolor" value="red" onclick="changeColor(this.value)" checked><img src="https://cdn0.iconfinder.com/data/icons/blank-stickers/125/blank-sticker-1013-128.png" alt="red"></label>
+            <label><input type="radio" name="strokecolor" value="green" onclick="changeColor(this.value)"><img src="https://cdn0.iconfinder.com/data/icons/blank-stickers/125/blank-sticker-1016-128.png" alt="green"></label>
+            <label><input type="radio" name="strokecolor" value="blue" onclick="changeColor(this.value)"><img src="https://cdn0.iconfinder.com/data/icons/blank-stickers/125/blank-sticker-1015-128.png" alt="blue"></label>
+            <input id="favcolor" type="color" name="strokecolor" value="#ff0000" onclick="changeColor(this.value)" style="margin: 8px;" size="8">      
+  
+         </div>
+         <div>
+            <h4>Stroke Size</h4>
+            <label><input type="radio" name="thickness" value="15" onclick="changeThickness(this.value)" checked>S</label>
+            <label><input type="radio" name="thickness" value="20" onclick="changeThickness(this.value)">M</label>
+            <label><input type="radio" name="thickness" value="30" onclick="changeThickness(this.value)">L</label>
+         </div>
+         <div>
+            <h4>Stroke Pattern</h4>
+            <label><input type="radio" name="brush" value="square" onclick="changeBrush(this.value)" checked>Square</label>
+            <label><input type="radio" name="brush" value="round" onclick="changeBrush(this.value)">Round</label>
+            <label><input type="radio" name="brush" value="transparent" onclick="transparentBrush()">Fade</label>
+         </div>
+         <div id="saveclearDiv">
+         	 <h4>Save Clear</h4>
+            <button onclick="erase()">Clear</button>
+          <a id="download" download="image.png">  <button id="save" onclick="save()">Save</button></a>
+         </div>
+         <div>
+            <h4>Background</h4>
+            <label><input type="radio" name="backgroundCover" value="linear" onclick="gradientFill()">Gradient</label>
+            <label>  <input type="radio" name="backgroundCover" value="imageDraw" onclick="drawImage()">Image</label>
+            <img id="flowerImage" style="display:none" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UdcdCBfKpOTS85LGTKVRIv_RbViBGvPFrW04j0IP7qAGhTYHZw" alt="The Scream">
+         </div>
+         <div>
+            <h4>Text</h4>
+            <input type="text" id="canvasText" placeholder="Type Something" size="10"><br>
+            <button onclick="showText()">Show Text</button>
+         </div>
+      </div>
+   </body>
+   <script src="main.js"></script>
+</html>
